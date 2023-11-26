@@ -45,11 +45,11 @@ def create_pdf_report_external():
     latitude = data.get('lat')
     get_polygon_info= data['get_polygon_info'].get('map_url')
     if headingvaluefound == "true":
-        url=f'https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location={latitude},{longitude}&heading=90&pitch=-5&key=AIzaSyCiO1aQT1C_5Mh5rVXrMs2G7X3WfKKTQxY'
-        url1=f'https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location={latitude},{longitude}&heading=180&pitch=-5&key=AIzaSyCiO1aQT1C_5Mh5rVXrMs2G7X3WfKKTQxY'
-        url2=f'https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location={latitude},{longitude}&heading=270&pitch=-5&key=AIzaSyCiO1aQT1C_5Mh5rVXrMs2G7X3WfKKTQxY'
-        url3=f'https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location={latitude},{longitude}&heading=360&pitch=-5&key=AIzaSyCiO1aQT1C_5Mh5rVXrMs2G7X3WfKKTQxY'
-        urlpov=f'https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location={latitude},{longitude}&heading={headervalue}&pitch=-5&key=AIzaSyCiO1aQT1C_5Mh5rVXrMs2G7X3WfKKTQxY'
+        url=f'https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location={latitude},{longitude}&heading=90&pitch=-5&key={config.google_maps_apikey}'
+        url1=f'https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location={latitude},{longitude}&heading=180&pitch=-5&key={config.google_maps_apikey}'
+        url2=f'https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location={latitude},{longitude}&heading=270&pitch=-5&key={config.google_maps_apikey}'
+        url3=f'https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location={latitude},{longitude}&heading=360&pitch=-5&key={config.google_maps_apikey}'
+        urlpov=f'https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location={latitude},{longitude}&heading={headervalue}&pitch=-5&key={config.google_maps_apikey}'
 
 
         urlretrieve(url, f"/opt/document_creator/views/templates/pdf_templates/streetmapimage.jpeg")
